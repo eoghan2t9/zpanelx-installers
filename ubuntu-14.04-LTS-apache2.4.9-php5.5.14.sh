@@ -354,6 +354,10 @@ chmod 644 /etc/varnish/default.vcl
 chown root:root /etc/varnish/default.vcl
 chmod 644 /etc/default/varnish
 chown root:root /etc/default/varnish
+
+# Change Apache Port
+sed -i 's/^Listen 80/Listen 8080/g' /etc/apache2/ports.conf
+
 service apache2 restart
 service varnish restart
 
