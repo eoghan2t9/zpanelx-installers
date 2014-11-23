@@ -15,6 +15,7 @@ N/A Yet
 
 Installers:
 Ubuntu 14.04:
+
 ```bash <(curl -Ss https://raw.githubusercontent.com/eoghan2t9/zpanelx-installers/master/ubuntu-14.04-LTS-apache2.4.9-php5.5.14.sh)```
 
 
