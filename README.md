@@ -29,4 +29,6 @@ Apache 2.4.10
 
 PHP 5.5.19
 
+Google's mod_pagespeed
+
 Bug Fixes:
