@@ -154,21 +154,7 @@ uname -a
 echo -e ""
 dpkg --get-selections
 
-# We need to update the enabled Aptitude repositories
-echo -ne "\nUpdating Aptitude Repos : " >/dev/tty
-
-mkdir -p "/etc/apt/sources.list.d.save"
-        cp -R "/etc/apt/sources.list.d/*" "/etc/apt/sources.list.d.save" &> /dev/null
-        rm -rf "/etc/apt/sources.list/*"
-        cp "/etc/apt/sources.list" "/etc/apt/sources.list.save"
-cat > /etc/apt/sources.list <<EOF
-#D�pots main restricted
-
-deb http://archive.ubuntu.com/ubuntu trusty main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu trusty-security main restricted universe multiverse
-deb http://archive.ubuntu.com/ubuntu trusty-updates main restricted universe multiverse
-
-EOF
+# Add PPA's
 apt-get -y install software-properties-common
 echo "add apache2 and php5 ppa"
 add-apt-repository -y ppa:ondrej/php5 &> /dev/null
