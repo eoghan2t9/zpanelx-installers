@@ -369,6 +369,12 @@ chown root:root /etc/varnish/default.vcl
 chmod 644 /etc/default/varnish
 chown root:root /etc/default/varnish
 
+# Xcache Config
+rm -rf /etc/php5/mods-available/xcache.ini
+wget --no-check-certificate https://raw.githubusercontent.com/eoghan2t9/zpanelx-installers/master/configs/xcache/xcache.ini -O /etc/php5/mods-available/xcache.ini
+chmod 644 /etc/php5/mods-available/xcache.ini
+chown root:root /etc/php5/mods-available/xcache.ini
+
 
 # PHP specific installation tasks...
 sed -i "s|;date.timezone =|date.timezone = $tz|" /etc/php5/cli/php.ini
