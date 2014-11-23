@@ -368,12 +368,15 @@ chmod 644 /etc/varnish/default.vcl
 chown root:root /etc/varnish/default.vcl
 chmod 644 /etc/default/varnish
 chown root:root /etc/default/varnish
+service apache2 restart
+service varnish restart
 
 # Xcache Config
 rm -rf /etc/php5/mods-available/xcache.ini
 wget --no-check-certificate https://raw.githubusercontent.com/eoghan2t9/zpanelx-installers/master/configs/xcache/xcache.ini -O /etc/php5/mods-available/xcache.ini
 chmod 644 /etc/php5/mods-available/xcache.ini
 chown root:root /etc/php5/mods-available/xcache.ini
+service apache2 restart
 
 
 # PHP specific installation tasks...
