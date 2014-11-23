@@ -274,9 +274,6 @@ until mysql -u root -p$password -e ";" > /dev/null 2>&1 ; do
 read -s -p "enter your root mysql password : " password
 done
 
-
-
-
 sed -i "s|YOUR_ROOT_MYSQL_PASSWORD|$password|" /etc/zpanel/panel/cnf/db.php
 mysql -u root -p$password -e "DROP DATABASE test";
 mysql -u root -p$password -e "DELETE FROM mysql.user WHERE User='root' AND Host != 'localhost'";
@@ -362,6 +359,16 @@ if ! grep -q "127.0.0.1 "$fqdn /etc/hosts; then echo "127.0.0.1 "$fqdn >> /etc/h
 if ! grep -q "apache ALL=NOPASSWD: /etc/zpanel/panel/bin/zsudo" /etc/sudoers; then echo "apache ALL=NOPASSWD: /etc/zpanel/panel/bin/zsudo" >> /etc/sudoers; fi
 a2enmod rewrite
 service apache2 restart
+
+# Varnish Configs
+rm -rf /etc/default/varnish /etc/varnish/default.vcl
+wget --no-check-certificate https://raw.githubusercontent.com/eoghan2t9/zpanelx-installers/master/configs/varnish/default.vcl -O /etc/varnish/default.vcl
+wget --no-check-certificate https://raw.githubusercontent.com/eoghan2t9/zpanelx-installers/master/configs/varnish/varnish -O /etc/default/varnish
+chmod 644 /etc/varnish/default.vcl
+chown root:root /etc/varnish/default.vcl
+chmod 644 /etc/default/varnish
+chown root:root /etc/default/varnish
+
 
 # PHP specific installation tasks...
 sed -i "s|;date.timezone =|date.timezone = $tz|" /etc/php5/cli/php.ini
