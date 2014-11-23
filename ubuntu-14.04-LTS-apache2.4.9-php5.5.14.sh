@@ -358,6 +358,7 @@ chown root:root /etc/default/varnish
 # Change Apache Port
 sed -i 's/^Listen 80/Listen 8080/g' /etc/apache2/ports.conf
 
+# Restart Services
 service apache2 restart
 service varnish restart
 
@@ -368,6 +369,9 @@ chmod 644 /etc/php5/mods-available/xcache.ini
 chown root:root /etc/php5/mods-available/xcache.ini
 service apache2 restart
 
+# Google Mod Page Speed
+URL='https://dl-ssl.google.com/dl/linux/direct/mod-pagespeed-stable_current_amd64.deb'; FILE=`mktemp`; wget "$URL" -qO $FILE && sudo dpkg -i $FILE; rm $FILE
+service apache2 restart
 
 # PHP specific installation tasks...
 sed -i "s|;date.timezone =|date.timezone = $tz|" /etc/php5/cli/php.ini
