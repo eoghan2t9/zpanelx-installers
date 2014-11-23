@@ -20,9 +20,13 @@ Ubuntu 14.04:
 
 
 Features:
+
 Varnish 3.0.5
+
 XCache v4.0.0-dev
+
 Apache 2.4.10
+
 PHP 5.5.19
 
 Bug Fixes:
