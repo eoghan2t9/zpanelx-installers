@@ -239,7 +239,7 @@ cp -R /etc/zpanel/panel/etc/build/config_packs/ubuntu_12_04/. /etc/zpanel/config
 ## FILES UPDATE ## ZCWORLD
 #ubuntu update on the apache / sql and the default Vhost for ZPX!
 rm -f /etc/zpanel/panel/modules/apache_admin/hooks/OnDaemonRun.hook.php /etc/zpanel/configs/zpanelx-install/sql/zpanel_core.sql /etc/zpanel/configs/apache/httpd.conf
-wget --no-check-certificate https://raw.githubusercontent.com/eoghan2t9/zpanelx-installers/master/configs/OnDaemonRun.hook.php_u14 -O /etc/zpanel/panel/modules/apache_admin/hooks/OnDaemonRun.hook.php
+wget --no-check-certificate https://raw.githubusercontent.com/eoghan2t9/zpanelx-installers/master/configs/OnDaemonRun.hook.php -O /etc/zpanel/panel/modules/apache_admin/hooks/OnDaemonRun.hook.php
 wget --no-check-certificate https://raw.githubusercontent.com/eoghan2t9/zpanelx-installers/master/configs/zpanel_core.sql -O /etc/zpanel/configs/zpanelx-install/sql/zpanel_core.sql
 # Set server tokens (security??)
 #ServerTokens Major
