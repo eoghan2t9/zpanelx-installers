@@ -1,4 +1,4 @@
-.#!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # OS VERSION: Ubuntu Server 14.04.x LTS
 # ARCH: x32_64
