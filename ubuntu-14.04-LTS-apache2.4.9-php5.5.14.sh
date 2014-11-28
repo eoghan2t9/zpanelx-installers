@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+.#!/usr/bin/env bash
 
 # OS VERSION: Ubuntu Server 14.04.x LTS
 # ARCH: x32_64
@@ -163,7 +163,7 @@ echo "add php5-suhosin ppa"
 add-apt-repository -y ppa:andykimpe/php5-suhosin &> /dev/null
 sleep 10
 echo "add mariadb ppa"
-echo "deb http://mirror.pw/mariadb/repo/10.1/ubuntu trusty main" >> /etc/apt/sources.list &> /dev/null
+echo "deb http://mirror.pw/mariadb/repo/10.1/ubuntu trusty main" > /etc/apt/sources.list.d/mairadb.list &> /dev/null
 sleep 10
 apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32
 apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 4F4EA0AAE5267A6C
@@ -191,7 +191,7 @@ apt-get upgrade -yqq
 # We disable the DPKG prompts before we run the software install to enable fully automated install.
 export DEBIAN_FRONTEND=noninteractive
 
-apt-get install -y at mariadb-server apache2 libapache2-mod-php5 libapache2-mod-bw php5-common php5-cli php5-mysql php5-gd php5-mcrypt php5-curl php-pear php5-imap php5-xmlrpc php5-xsl zip webalizer build-essential bash-completion dovecot-mysql dovecot-imapd dovecot-pop3d dovecot-common dovecot-managesieved dovecot-lmtpd postfix postfix-mysql libsasl2-modules-sql libsasl2-modules proftpd-mod-mysql bind9 bind9utils php5-suhosin varnish php5-xcache
+apt-get install -y at mariadb-server-10.0 mariadb-client-10.0 apache2 libapache2-mod-php5 libapache2-mod-bw php5-common php5-cli php5-mysql php5-gd php5-mcrypt php5-curl php-pear php5-imap php5-xmlrpc php5-xsl zip webalizer build-essential bash-completion dovecot-mysql dovecot-imapd dovecot-pop3d dovecot-common dovecot-managesieved dovecot-lmtpd postfix postfix-mysql libsasl2-modules-sql libsasl2-modules proftpd-mod-mysql bind9 bind9utils php5-suhosin varnish php5-xcache
 
 # Generation of random passwords
 password=`passwordgen`;
