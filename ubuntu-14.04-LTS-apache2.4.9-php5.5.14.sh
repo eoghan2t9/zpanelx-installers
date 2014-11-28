@@ -155,7 +155,7 @@ echo -e ""
 dpkg --get-selections
 
 # Add PPA's
-apt-get -y install software-properties-common curl
+apt-get -y install software-properties-common curl apt-transport-https
 echo "add apache v2.4.10 and php v5.6 ppa"
 add-apt-repository -y ppa:ondrej/php5-5.6 &> /dev/null
 sleep 10
@@ -195,7 +195,7 @@ apt-get upgrade -yqq
 # We disable the DPKG prompts before we run the software install to enable fully automated install.
 export DEBIAN_FRONTEND=noninteractive
 
-apt-get install -y at mariadb-server-10.0 mariadb-client-10.0 apache2 libapache2-mod-php5 libapache2-mod-bw php5-common php5-cli php5-mysql php5-gd php5-mcrypt php5-curl php-pear php5-imap php5-xmlrpc php5-xsl zip webalizer build-essential bash-completion dovecot-mysql dovecot-imapd dovecot-pop3d dovecot-common dovecot-managesieved dovecot-lmtpd postfix postfix-mysql libsasl2-modules-sql libsasl2-modules proftpd-mod-mysql bind9 bind9utils php5-suhosin varnish php5-xcache apt-transport-https
+apt-get install -y at mariadb-server-10.0 mariadb-client-10.0 apache2 libapache2-mod-php5 libapache2-mod-bw php5-common php5-cli php5-mysql php5-gd php5-mcrypt php5-curl php-pear php5-imap php5-xmlrpc php5-xsl zip webalizer build-essential bash-completion dovecot-mysql dovecot-imapd dovecot-pop3d dovecot-common dovecot-managesieved dovecot-lmtpd postfix postfix-mysql libsasl2-modules-sql libsasl2-modules proftpd-mod-mysql bind9 bind9utils php5-suhosin varnish php5-xcache
 
 # Generation of random passwords
 password=`passwordgen`;
