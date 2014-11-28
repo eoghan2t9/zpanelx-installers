@@ -16,12 +16,12 @@ N/A Yet
 Installers:
 Ubuntu 14.04:
 
-```bash <(curl -Ss https://raw.githubusercontent.com/eoghan2t9/zpanelx-installers/master/ubuntu-14.04-LTS-apache2.4.9-php5.5.14.sh)```
+```bash <(curl -Ss https://raw.githubusercontent.com/eoghan2t9/zpanelx-installers/master/ubuntu-14.04-LTS-apache2.4.10-php5.6.3.sh)```
 
 
 Features:
 
-Varnish 3.0.5
+Varnish 4.0.2
 
 XCache v4.0.0-dev
 
