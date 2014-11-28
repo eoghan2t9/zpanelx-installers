@@ -156,8 +156,8 @@ dpkg --get-selections
 
 # Add PPA's
 apt-get -y install software-properties-common
-echo "add apache2 and php5 ppa"
-add-apt-repository -y ppa:ondrej/php5 &> /dev/null
+echo "add apache v2.4.10 and php v5.6 ppa"
+add-apt-repository -y ppa:ondrej/php5-5.6 &> /dev/null
 sleep 10
 echo "add php5-suhosin ppa"
 add-apt-repository -y ppa:andykimpe/php5-suhosin &> /dev/null
