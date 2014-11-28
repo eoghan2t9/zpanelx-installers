@@ -163,10 +163,10 @@ echo "add php5-suhosin ppa"
 add-apt-repository -y ppa:andykimpe/php5-suhosin &> /dev/null
 sleep 10
 echo "add mariadb repo"
-echo "deb http://mirror.pw/mariadb/repo/10.1/ubuntu trusty main" >> /etc/apt/sources.list.d/mairadb.list
+echo "deb http://mirror.pw/mariadb/repo/10.1/ubuntu trusty main" > /etc/apt/sources.list.d/mairadb.list
 sleep 10
 echo "add varnish repo"
-echo "deb https://repo.varnish-cache.org/ubuntu/ trusty varnish-4.0" >> /etc/apt/sources.list.d/varnish-cache.list
+echo "deb https://repo.varnish-cache.org/ubuntu/ trusty varnish-4.0" > /etc/apt/sources.list.d/varnish-cache.list
 sleep 10
 apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 3B4FE6ACC0B21F32
 apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 4F4EA0AAE5267A6C
